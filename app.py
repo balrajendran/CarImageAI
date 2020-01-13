@@ -18,9 +18,9 @@ def index():
             # save the file to temp folder
             item = request.files["image"]
             filename = item.filename
-            imgfolder = os.getcwd()+'\\static\\image'
+            imgfolder = os.path.join(os.path.dirname(os.path.abspath(__file__)),'static','image')
             savefilepath = os.path.join(imgfolder,filename)
-            pathtohtml = "http://127.0.0.1:5000/static/image/"+filename
+            pathtohtml = "https://carimageartificialinteligence.herokuapp.com/static/image/"+filename
             if os.path.exists(imgfolder):
                 shutil.rmtree(imgfolder, True)
             os.mkdir(imgfolder)
